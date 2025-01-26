@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stock Prediction</title>
+    </head>
+    <body>
+        <h1 class="company-line">Choose the company</h1>
+        
+        <form action="/submit" method="POST">
+            <div class="choose-box">
+                <select id="companies" name="companies">
+                    <option value="FPT">FPT</option>
+                    <option value="MSN">MSN</option>
+                    <option value="PNJ">PNJ</option>
+                    <option value="VIC">VIC</option>
+                </select>
+            </div>
+            
+            <p class="line">Type the input day by mm/dd/yy hour:minute(Example: "12/20/2020 9:18")</p>
+            <input class="text-box" type="text" id="yymmddhm" name="yymmddhm">
+            <br><br>
+            <button class="submit-button" type="submit">Submit</button>
+        </form>
+        
+        <p class="line"> Predict for the {{company}} company in {{date_time}} is {{result}} </p>
+    </body>
+
+</html>
+
+<style>
+    body{
+        font-family: arial;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .company-line{
+        font-size: 75px;
+        display: grid;
+        place-items: center;
+        height: 30vh;
+        margin-bottom: 0;
+        height: auto;
+    }
+
+    .choose-box{
+        display: grid;
+        place-items: center;
+    }
+
+    select{
+        width: 150px;
+        font-size: 20px;
+
+        height: auto;
+        align-items: center;
+        text-align: center;
+        text-align-last: center;
+        box-sizing: border-box; 
+    }
+
+    .submit-button{
+        display:grid;
+        place-items: center;
+        width: 75px;
+        text-align: center;
+        height: auto;
+        font-size: 20px;
+        margin-left: 675px;
+    }
+
+    .line{
+        display: grid;
+        place-items: center;
+    }
+
+    .text-box{
+        margin-left: 625px;
+        place-items: center;
+    }
+</style>
+
