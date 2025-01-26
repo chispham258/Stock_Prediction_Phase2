@@ -4,7 +4,7 @@ import pandas as pd
 
 def extract(company):
     file = "data/" + company + ".csv"
-    data = pd.read_csv(file, nrows=5000)
+    data = pd.read_csv(file)
     data['Index'] = data.index
 
     date_time = []
