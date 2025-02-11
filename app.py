@@ -49,21 +49,6 @@ def train(data):
 
     return X, y, RF
 
-def query(input, X_train, y_train, model):
-    inp_date, inp_time = input.split(' ')
-    inp_month, inp_day, inp_year = inp_date.split('/')
-    inp_hour, inp_minute = inp_time.split(':')
-
-    inp_yymmddhm=(((((int(inp_year) * 100) + int(inp_month)) * 100 + int(inp_day)) * 100 + int(inp_hour)) *100 + int(inp_minute))
-    inp = {'yymmddhm':inp_yymmddhm, 'Day':inp_day, 'Month':inp_month, 'Year':inp_year, 'Hour':inp_hour, 'Minute':inp_minute}
-
-    X_test = pd.DataFrame(columns=X_train.columns).astype(X_train.dtypes)
-    X_test.loc[X_test.shape[0]] = inp
-
-    y_pred = model.predict(X_test)
-
-    return y_pred[0]
-
 companies = ["FPT", "MSN", "PNJ", "VIC"]
 dict = {"FPT": 0, "MSN": 1, "PNJ": 2, "VIC": 3}
 
